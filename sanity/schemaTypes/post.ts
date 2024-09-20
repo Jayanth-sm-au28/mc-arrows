@@ -29,6 +29,12 @@ export const post = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "summary",
+      type: "text",
+      title: "Summary",
+      validation: (Rule) => Rule.required(),
+    }),
 
     {
       name: "content",
