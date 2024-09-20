@@ -3,4 +3,5 @@ type Post = {
   summary: string;
   image: any;
   slug: string;
+  tags: Tag[];
 };

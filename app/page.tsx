@@ -15,6 +15,12 @@ export default async function Home() {
   //   };
   //   slug: string;
   // }
+  interface Tags{
+    name: string;
+    slug: { current: string };
+    _id: string;
+    postCount?: number
+  }
   const query = `*[_type == "post"] | order(_createdAt asc) {
   summary,
   title,

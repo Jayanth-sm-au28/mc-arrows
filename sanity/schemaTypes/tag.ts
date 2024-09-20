@@ -1,3 +1,4 @@
+// tag.ts
 import { defineType, defineField } from "sanity";
 
 export const tag = defineType({
@@ -17,6 +18,12 @@ export const tag = defineType({
       options: {
         source: "name",
       },
+    }),
+    defineField({
+      name: "postCount",
+      title: "Post Count",
+      type: "number",
+      initialValue: 0, // Optional: Set a default value
     }),
   ],
 });
