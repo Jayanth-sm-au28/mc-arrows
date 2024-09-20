@@ -58,5 +58,11 @@ export const post = defineType({
         },
       ],
     }),
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "tag" }] }],
+    },
   ],
 });

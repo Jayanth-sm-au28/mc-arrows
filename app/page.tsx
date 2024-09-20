@@ -15,11 +15,17 @@ export default async function Home() {
   //   };
   //   slug: string;
   // }
-  const query = `*[_type=='post'] | order(_createdAt asc){
-  
-    summary,title,image,
-      "slug":slug.current
-  }`;
+  const query = `*[_type == "post"] | order(_createdAt asc) {
+  summary,
+  title,
+  image,
+  "slug": slug.current,
+  tags[]-> {
+    _id,
+    "slug": slug.current, 
+    name
+  }
+}`;
 
   const posts: Post[] = await client.fetch(query);
   console.log(posts);

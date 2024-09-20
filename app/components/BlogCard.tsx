@@ -31,6 +31,19 @@ export default function BlogCard({ post }: { post: Post }) {
         >
           Read More
         </Link>
+        <p className="text-dark/70 dark:text-light/70 line-clamp-3">
+          {post.tags && post.tags.length > 0 ? (
+            post.tags.map(
+              (tag: { name: string; slug: string; _id: string }) => (
+                <span key={tag._id} className="mr-2">
+                  #{tag.name}
+                </span>
+              )
+            )
+          ) : (
+            <span>No tags</span>
+          )}
+        </p>
       </div>
     </section>
   );
