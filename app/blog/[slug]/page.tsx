@@ -4,7 +4,7 @@ import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { components } from "@/app/components/CoustomPortableText";
 
-export const revalidate = 60; //seconds
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const query = `*[_type=='post']{
@@ -47,10 +47,10 @@ export default async function page({
 
       {/* Blog Summary Section */}
       <section>
-        <h2 className="text-xl xs:text-xl md:text-3xl font-bold uppercase text-accentDarkPrimary text-blue-800">
+        <h2 className=" sm:text-base md:text-2xl font-bold uppercase text-accentDarkPrimary text-blue-800">
           Summary :
         </h2>
-        <p className="text-base md:text-xl leading-relaxed text-justify text-dark/80 dark:text-light/80">
+        <p className="text-baseleading-relaxed text-justify text-dark/80 dark:text-light/80">
           {post.summary}
         </p>
       </section>
@@ -66,6 +66,7 @@ export default async function page({
         />
         <div className="flex flex-col gap-1">
           <h3 className="text-xl font-bold text-dark dark:text-light">
+            <span>Author : </span>
             {post.author.name}
           </h3>
           <p className="italic text-xs xs:text-sm sm:text-base text-dark/80 dark:text-light/80">
@@ -75,14 +76,7 @@ export default async function page({
       </section>
 
       {/* Main Body of Blog */}
-      <section
-        className=" text-lg leading-normal dark:text-light/80
-      prose-h4:text-accentDarkPrimary prose-h4:text-3xl prose-h4:font-bold
-      prose-li:list-disc prose-li:list-inside prose-li:marker:text-accentDarkSecondary
-      prose-strong:text-dark dark:prose-strong:text-white
-      
-      "
-      >
+      <section className=" sm:text-sm md:text-lg">
         <PortableText value={post.content} components={components} />
       </section>
     </article>

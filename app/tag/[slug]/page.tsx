@@ -4,7 +4,11 @@ import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 
 // No 'use client' here since we are using a server component
-export default async function TagPage({ params }: { params: { slug: string } }) {
+export default async function TagPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params; // Get the dynamic tag slug from the URL
 
   // Query to fetch posts that reference the selected tag
@@ -71,7 +75,9 @@ export default async function TagPage({ params }: { params: { slug: string } }) 
             </div>
           ))
         ) : (
-          <p className="text-xl font-semibold text-center">No posts found for this tag.</p>
+          <p className="text-xl font-semibold text-center">
+            No posts found for this tag.
+          </p>
         )}
       </section>
     </main>

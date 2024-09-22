@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { client } from "@/sanity/lib/client";
-import { Tag } from "./utils/interface";
-import Link from "next/link";
-import RightSideComponent from "./components/LeftSideComponent";
 import LeftSideComponent from "./components/LeftSideComponent";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import TagsForMobile from "./components/TagsForMobile";
 import TopTagComponent from "./components/TopTagComponent";
 
 const geistSans = localFont({
@@ -68,15 +63,15 @@ export default async function RootLayout({
           aria-label="Sidebar"
         >
           <div className=" px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800  ">
-            <LeftSideComponent  />
+            <LeftSideComponent />
           </div>
         </aside>
         <TopTagComponent />
-        
+
         <NavBar />
-        
+
         <div className="p-4 sm:ml-64 mt-24">{children}</div>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-// tag.ts
 import { defineType, defineField } from "sanity";
 
 export const tag = defineType({

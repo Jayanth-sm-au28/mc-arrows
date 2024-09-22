@@ -1,5 +1,3 @@
-// import Header from "@/app/components/Header";
-// import Navbar from "@/app/components/Navbar";
 import { Tag } from "@/app/utils/interface";
 import { client } from "@/sanity/lib/client";
 import { Metadata } from "next";
@@ -26,18 +24,13 @@ export const metadata: Metadata = {
   // title: {
   //   absolute: "TAGS",
   // },
-  description: "Search for posts by tags on the blog"
-}
+  description: "Search for posts by tags on the blog",
+};
 
 const page = async () => {
   const tags: Tag[] = await getAllTags();
   console.log(tags, "tags");
-  return (
-    <div>
-      {/* <Header title="Tags" /> */}
-      
-    </div>
-  );
+  return <div>{/* <Header title="Tags" /> */}</div>;
 };
 
 export default page;
