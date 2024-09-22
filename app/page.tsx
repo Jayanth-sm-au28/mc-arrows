@@ -1,9 +1,7 @@
-"use client";
+"use client"
 // /app/page.tsx
 import { client } from "@/sanity/lib/client";
 import BlogCard from "./components/BlogCard";
-import Link from "next/link";
-import TagsForMobile from "./components/TagsForMobile";
 
 // Define the types for your data
 interface Post {

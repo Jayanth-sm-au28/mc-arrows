@@ -1,9 +1,8 @@
-"use client";
+"use client"
 import Link from "next/link";
 import React, { useState } from "react";
 import { Tag } from "../utils/interface";
 
-// Client component to handle the dropdown and render the tags
 const TagsForMobile = ({ tags }: { tags: Tag[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,13 +11,7 @@ const TagsForMobile = ({ tags }: { tags: Tag[] }) => {
       {/* Button to toggle the dropdown */}
       <div className="md:hidden flex justify-between items-center p-4 bg-gray-200 dark:bg-gray-800">
         <span className="text-lg font-semibold">Tags</span>
-        <a
-          href="/"
-          className="   text-white bg-blue-700 rounded md:text-blue-700 px-2"
-          aria-current="page"
-        >
-          Home
-        </a>
+        
 
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -42,17 +35,7 @@ const TagsForMobile = ({ tags }: { tags: Tag[] }) => {
         </div>
       )}
 
-      {/* For larger screens, show the tags in a standard list (optional) */}
-      <div className="hidden md:flex flex-wrap p-4">
-        {tags?.length > 0 &&
-          tags?.map((tag: Tag) => (
-            <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-              <div className="mb-2 p-2 text-sm lowercase dark:bg-gray-950 border dark:border-gray-900 hover:text-purple-500">
-                #{tag.name} ({tag?.postCount})
-              </div>
-            </Link>
-          ))}
-      </div>
+     
     </div>
   );
 };

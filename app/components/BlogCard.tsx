@@ -11,7 +11,7 @@ export default function BlogCard({ post }: { post: Post }) {
   };
   return (
     <section
-      className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 shadow-md shadow-gray-300 dark:shadow-black/80 bg-gray-100 group hover:scale-105 transition-transform ease-out duration-700 px-4"
+      className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 shadow-md shadow-gray-300 dark:shadow-black/80 bg-gray-100 group hover:scale-105 transition-transform ease-out duration-700 p-4"
       onClick={handleClick}
     >
     
@@ -22,7 +22,7 @@ export default function BlogCard({ post }: { post: Post }) {
           src={urlForImage(post.image)}
           alt="Any"
           fill
-          className="object-cover rounded "
+          className="object-cover rounded-lg"
         />
       </div>
 
