@@ -12,6 +12,14 @@ const TagsForMobile = ({ tags }: { tags: Tag[] }) => {
       {/* Button to toggle the dropdown */}
       <div className="md:hidden flex justify-between items-center p-4 bg-gray-200 dark:bg-gray-800">
         <span className="text-lg font-semibold">Tags</span>
+        <a
+          href="/"
+          className="   text-white bg-blue-700 rounded md:text-blue-700 px-2"
+          aria-current="page"
+        >
+          Home
+        </a>
+
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-sm bg-blue-700 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-all"
