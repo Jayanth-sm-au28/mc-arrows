@@ -8,6 +8,8 @@ import RightSideComponent from "./components/LeftSideComponent";
 import LeftSideComponent from "./components/LeftSideComponent";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import TagsForMobile from "./components/TagsForMobile";
+import TopTagComponent from "./components/TopTagComponent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -69,8 +71,11 @@ export default async function RootLayout({
             <LeftSideComponent  />
           </div>
         </aside>
+        <TopTagComponent />
+        
         <NavBar />
-        <div className="p-4 sm:ml-64 mt-20">{children}</div>
+        
+        <div className="p-4 sm:ml-64 mt-24">{children}</div>
         <Footer/>
       </body>
     </html>

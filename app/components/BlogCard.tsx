@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,8 +10,12 @@ export default function BlogCard({ post }: { post: Post }) {
     router.push(`/blog/${post.slug}`);
   };
   return (
-    <section className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 shadow-md shadow-gray-300 dark:shadow-black/80 bg-gray-100 group hover:scale-105 transition-transform ease-out duration-700 px-4"
-    onClick={handleClick}>
+    <section
+      className="flex flex-col justify-between h-[480px] rounded-lg bg-light/90 dark:bg-dark/40 shadow-md shadow-gray-300 dark:shadow-black/80 bg-gray-100 group hover:scale-105 transition-transform ease-out duration-700 px-4"
+      onClick={handleClick}
+    >
+    
+
       {/* Image Section*/}
       <div className="relative max-h-76 flex-1">
         <Image
