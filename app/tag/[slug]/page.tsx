@@ -1,14 +1,11 @@
-"use client";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
-import { useParams } from "next/navigation"; // Use this to access dynamic route params
 import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image"; // Assuming you have a helper function for image URL
-// import CardComponent from "@/app/components/CardComponent";
+import { urlForImage } from "@/sanity/lib/image";
 
-export default async function TagPage({ post }: { post: Post }) {
-  const params = useParams();
-  const { slug } = params; // Get the dynamic tag slug from URL
+// No 'use client' here since we are using a server component
+export default async function TagPage({ params }: { params: { slug: string } }) {
+  const { slug } = params; // Get the dynamic tag slug from the URL
 
   // Query to fetch posts that reference the selected tag
   const query = `*[_type == "post" && "${slug}" in tags[]->slug.current] {
@@ -24,7 +21,6 @@ export default async function TagPage({ post }: { post: Post }) {
   }`;
 
   const posts = await client.fetch(query);
-  console.log("Filtered Posts by Tag:", posts);
 
   return (
     <main className="flex min-h-screen flex-col">
@@ -44,15 +40,15 @@ export default async function TagPage({ post }: { post: Post }) {
                   <Image
                     src={urlForImage(post.image)}
                     alt={post.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="rounded"
                   />
                 </div>
               )}
               <Link
                 href={`/blog/${post.slug}`}
-                className="block px-4 py-1 text-center bg-accentDarkSecondary  rounded text-dark font-semibold mt-4"
+                className="block px-4 py-1 text-center bg-accentDarkSecondary rounded text-dark font-semibold mt-4"
               >
                 Read More
               </Link>
